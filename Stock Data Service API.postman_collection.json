@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "4cc66cb9-4493-4f89-b8b1-a3bc2068857e",
+		"name": "Stock Data Service API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38657008"
+	},
+	"item": [
+		{
+			"name": "Get Stock Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/stock/AAPL",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"stock",
+						"AAPL"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Stock History",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/stock/AAPL/history",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"stock",
+						"AAPL",
+						"history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Stock Symbol",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/stock/search/Appl",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"stock",
+						"search",
+						"Appl"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stock-data-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: stock-service
+  template:
+    metadata:
+      labels:
+        app: stock-service
+    spec:
+      containers:
+      - name: stock-service
+        image: your_dockerhub_username/stock-service:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: ALPHA_VANTAGE_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: alpha-vantage-secret
+              key: api-key
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: stock-service
+spec:
+  selector:
+    app: stock-service
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+  type: LoadBalancer
